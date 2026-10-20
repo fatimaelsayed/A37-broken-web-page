@@ -1,0 +1,13 @@
+*CSS:
+-body:
+backgroundcolor-->background-color, missing'-'
+-box:
+position:relative, was added so that the box could move
+
+*JavaScript:
+-counter=0 --> let counter=0, added the let to declare counter as a variable
+-let interval, was added since it wasnt defined but still used in the function
+-let input=document.getElementById("name")-->let input=document.getElementById("nameInput"), correct ID selection
+-document.style.backgroundColor = "yellow"-->document.body.style.backgroundColor = "yellow", fixed the syntax 
+-let box=document.getElementById("boxx")-->let box=document.getElementById("box"), fixed the typo
+-if (counter == 10) { clearInterval(interval); } ,Replaced  counter==10 with an if condition and clearInterval() to stop the box from moving further than 10px

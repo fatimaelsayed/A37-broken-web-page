@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buggy Example</title>
+    <style>
+
+        body {
+            background-color: lightblue; /*missing '-'*/
+        } 
+        #box {
+           position: relative; /* Fixed: Added positioning so style.left actually moves the box */
+           width: 100px;
+           height: 100px;
+           background: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Bug Practice</h1>
+
+<input id="nameInput" type="text"> <!--cretaes a text input box-->
+<button onclick="start()">Start</button> <!--creates a button that calls the start functiion when pressed on-->
+
+<div id="box"></div> <!--creates an empty container that displays as the red square because it has the id"box"-->
+    
+<script>
+    let counter = 0; //created the variable called counter the correct way. This declares the counter variable and sets its initial vale to 0
+    let interval; //interval wasnt defined but it was used in the function to hold the refrence later
+
+    function start(){ 
+        let input=document.getElementById("nameInput"); //Fixed Id name from 'name' to 'nameInput'. This line finds the input element and stores it
+        console.log(input.value); //displays the text that was entered in the input box in the console
+
+        interval= setInterval(function () {
+            counter++;
+
+            document.body.style.backgroundColor="yellow"; // Changes the page background color to yellow when the function is called.
+            //Wrote the correct syntax for changing the backgrund color
+
+            let box=document.getElementById("box"); // Finds the box element using its correct ID
+            //Fixed the Id, had an additional 'x'
+            box.style.left= counter + "px"; //moves the box to the left t
+            
+            if (counter==10){// Checks if the counter has reached 10
+                clearInterval(interval);// Stops the repeating interval
+            }
+        });
+    }
+</script>
+</body>
+</html>
